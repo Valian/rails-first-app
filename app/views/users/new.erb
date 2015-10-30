@@ -1,0 +1,19 @@
+<div class="login">
+  <div class="container">
+    <div class="form">
+
+      <h1>Sign up</h1>
+      <% @user.errors.full_messages.each do |error| %>
+          <div><%= error %></div>
+      <% end %>
+      <%= form_for(@user) do |f| %>
+          <%= f.text_field :login, :placeholder => "Login" %>
+          <%= f.email_field :email, :placeholder => "Email" %>
+          <%= f.password_field :password, :placeholder => "Password" %>
+          <%= f.submit "Create an account", class: "btn-submit" %>
+      <% end %>
+
+
+    </div>
+  </div>
+</div>
